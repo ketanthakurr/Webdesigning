@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox{
+            width: 800px;
+            height: 800px;
+            background-color: red;
+            position: relative;
+        }
+
+        .box1{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .box1[boxno="1"]{
+        background-color: yellow;
+        }
+        .box1[boxno="2"]{
+        background-color: cyan  ;
+        transform: rotate(45deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="box1" boxno="1">
+
+        </div>
+        <div class="box1" boxno="2">
+
+        </div>
+    </div>
+    <button class="btn" onclick="moveBox(); moveBox2();">Move</button>
+    <!-- <button class="btn" onclick="moveBox2()">Move Right</button> -->
+
+    <script>
+        function moveBox(){
+            boxmove[0].style.left = "600px";
+            boxmove[0].style.transitionDuration="2s";
+            
+            boxmove[1].style.left = "600px";
+            boxmove[1].style.transitionDuration="3s";
+        }        
+        function moveBox2(){
+            boxmove[0].style.left = "50px";
+            boxmove[0].style.transitionDuration="2s";
+            
+            boxmove[1].style.left = "50px";
+            boxmove[1].style.transitionDuration="3s";
+        }
+        
+        var btn = document.querySelectorAll('.box1');
+        btn.addEventListener('onclick', moveBox);
+        btn.addEventListener('onclick', moveBox2);
+
+        // let boxmove2 = document.querySelectorAll('.box1');
+    </script>
+</body>
+</html>

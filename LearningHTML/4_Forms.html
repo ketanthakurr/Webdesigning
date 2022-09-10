@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h2>Forms Learning</h2>
+    <!-- We used div command instead oof br command because div command is a inline. which takes whole live -->
+    <!-- Don't use br command regularly -->
+    <form action="">
+        <div>
+            Name: <input type="text" name="myName">
+        </div>
+        <br>
+        <div>
+            Male <input type="radio" name="myGender"> Female <input type="radio" name="myGender">
+        </div>
+        <br>
+        <div>
+            Email <input type="email" name="myEmail">
+        </div><br>
+        <div>
+            <label for="check">Are you a Human ? </label>
+            <input type="checkbox" name="myAssurance" id="check">
+        </div><br>
+        <div>
+            Write about yourself. <br>
+            <textarea name="myText" cols="100" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="PC">Which pc you want for your workdesk ? </label><br>
+            <select name="myPC" id="PC">
+                <option value="TUF">ASUS TUF GAMING</option>
+                <option value="LEGION">LENOVO LEGION</option>
+                <option value="ACER">ACER PREDATOR</option>
+            </select>
+
+        </div><br>
+        <div>
+            <input type="submit" value="SUBMIT"> 
+            <input type="reset" value="RESET"> 
+        </div>
+    </form>
+</body>
+</html>

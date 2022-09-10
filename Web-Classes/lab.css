@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.block{
+    width: 1400px;
+    height: 1400px;
+    margin: 240px auto;
+    position: relative;    
+}
+
+.box {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: bisque;
+    margin: 15px;
+    border-radius: 10px;
+    float: left;
+
+}
+
+.txt{
+    position: absolute;
+    text-align: center;
+    margin-top: 110px;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left:80px;
+}
+
+.box:hover{
+    background-color: hwb(69 66% 7%);
+    font-size: 0px;
+}
+
+.txt:hover{
+    
+}
+
+.box:hover::after{
+    content: "School Of Engineering and Technology";
+}

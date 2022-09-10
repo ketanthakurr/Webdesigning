@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    position: absolute;
+}
+
+.container2{
+    display: flex;
+}
+
+.dd{
+    width: 50vw;
+    height: 50wh;
+}
+
+.left{
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(133, 255, 133);
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+}
+
+/* .heading{
+    text-align: center;
+    justify-content: center;
+} */
+
+.right{
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 133, 255);
+    /* display: flex; */
+    height: 50vh;
+    width: 50vw;
+    /* margin-left: 50vw; */
+}
+
+.desc{
+    background-color: green;
+    width: 100vw;
+    /* display: flex */
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 50vh; */
+}
+
+.courses{
+    padding-top: 60px;
+    text-align: center;
+}

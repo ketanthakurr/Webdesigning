@@ -1,0 +1,121 @@
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wrapper{
+            height: 100vh;
+            width: 100vw;
+            background-color: aliceblue;
+            position: absolute;
+        }
+
+        .wrapper1{
+            display: flex;
+        }
+
+        .dd{
+            width: 50vw;
+            height: 50vh;
+        }
+
+        .d1{
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+        .d2{
+            background-color: green;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        
+        .d3{
+            background-color: blue;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .course{
+            padding-top: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="wrapper1">
+        <div class="dd d1">
+            <ul>
+                <h3> Schools: </h3>
+                <li onclick="Do(0)">School of Engineering</li>
+                <li onclick="Do(1)"> School of Management</li>
+                <li onclick="Do(2)"> School of Law</li>
+            </ul>
+        </div>
+        <div class="dd d2">
+            <div class="course" style="display:none">
+                <ul>
+                    <h3> Courses for SOET: </h1>
+                    <li onclick="Do2()"> CSE </li>
+                    <li onclick="Do2()"> Mechanical </li>
+                    <li onclick="Do2()"> Electrical </li>
+                    <li onclick="Do2()"> Chemical</li>
+                </ul>
+            </div>
+
+            <div class="course" style="display:none">
+                <ul>
+                    <h3> Courses for SOM: </h1>
+                        <li onclick="Do2()"> Business Analytics </li>
+                        <li onclick="Do2()"> Digital Marketing </li>
+                        <li onclick="Do2()"> Finance </li>
+                        <li onclick="Do2()"> General Studies </li>
+                </ul>
+            </div>
+
+            <div class="course" style="display:none">
+                <ul>
+                    <h3> Courses for SOL: </h1>
+                        <li onclick="Do2()"> BBA </li>
+                        <li onclick="Do2()"> BA </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="dd d3">
+        <p class = "p2"> </p>
+    </div>
+    </div>
+    <script>
+        function Do(i){
+            let elem = document.querySelectorAll(".course");
+            for(let j = 0; j < elem.length; j++){
+                elem[j].style.display = "none" ;
+            }
+            elem[i].style.display = "block";
+        }
+
+        function Do2(){
+            let strs = [
+                "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with"
+            ]
+
+            let elems = document.querySelector(".p2");
+            elems.innerHTML = strs[0];
+        }
+    </script>
+</body>
+</html>
