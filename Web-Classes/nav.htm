@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Navbar</title>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="logo.png" class="logo" alt="">
+        <ul class="nav-items">
+            <li class="nav-links dropdown">
+                <a href="">SCHOOL</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="show()" id="btnID1"> SOET</a>
+                    <a href="#" onclick="show()" id="btnID2"> SOM</a>
+                    <a href="#" onclick="show()" id="btnID3"> SOL</a>
+                </div>
+            </li>
+            <li class="nav-links dropdown">
+                <a href="">PROGRAMS</a>
+                <div class="dropdown-content">
+                    <a href="#">B.Tech</a>
+                    <a href="#">BBA</a>
+                    <a href="#">LAW</a>
+                    <a href="#">BA-LLB</a>
+                </div>
+            </li>
+            <li class="nav-links dropdown">
+                <a href="">PROJECTS</a>
+                <div class="dropdown-content">
+                    <a href="#">WEB</a>
+                    <a href="#">JOE</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="image-container">
+        <div class="image-cards">
+            <img src="eng.jpg" style="display: none;" id="image1" alt="">
+            <img src="soom.jpg" style="display: none;" id="image2" alt="">
+            <img src="sol.jpg" style="display: none;" id="image3" alt="">
+        </div>
+    </div>
+    <script>
+        function show(){
+
+            document.getElementById('image1').style.display = "block";
+            document.getElementById('btnID1').style.display = "none";
+            document.getElementById('image2').style.display = "block";
+            document.getElementById('btnID2').style.display = "none";
+            document.getElementById('image3').style.display = "block";
+            document.getElementById('btnID3').style.display = "none";
+        }
+    </script>
+</body>
+</html>
