@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        span{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .roll-input{
+            padding-left: 88px;
+        }
+        .name-input{
+            padding-left: 98px;
+        }
+        .enroll-btn{
+            margin-left: 50px;
+        }
+        .next-btn, .prv-btn{
+            margin-left: 30px;
+        }
+        .display-btn{
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="javascript:submit()" name="form1">
+    <!-- Roll No. Details -->
+    <p>
+    <span id="rollno">Roll No :</span>
+    <span class="roll-input"><input type="text"></span> <span><button class="enroll-btn">Enroll Student</button></span>
+    </p>
+
+    <!-- Name Details -->
+    <p>
+    <span class="name" id="name">Name : </span>
+    <span class="name-input"><input type="text"></span>
+    <span><button class="next-btn" id="nxt-btn"> >> </button></span>
+    </p>
+
+    <!-- Marks Details -->
+    <p><span id="mark1">Marks in Subject 1 : </span><span><input type="text"></span></p>
+    <p><span id="mark2">Marks in Subject 2 : </span><span><input type="text"></span><span><button class="prv-btn" id="prv-btn"> << </button></span></p>
+    <p><span id="mark3">Marks in Subject 3 : </span><span><input type="text"></span>
+    <span><button class="display-btn" id="display-btn"> Display Details by given roll </button></span></p>
+
+    <!-- Display Buttons -->
+    <button class="student-result">Show result of all student</button>
+    <button class="given-result">Display result of given roll no</button>
+</form>
+    <script>
+        class Student{
+            static roll = 1;
+            
+            constructor(name, mark1, mark2, mark3){
+                this.roll = Student.roll++;
+                this.name = name;
+                this.marks1 = mark1;
+                this.marks2 = mark2;
+                this.marks3 = mark3;
+            }
+    
+            getName(){
+                return this.name;
+            }
+    
+            getRollNo(){
+                return this.roll;
+            }
+    
+            getMarks1(){
+                return this.marks1;
+            }
+    
+            getMarks2(){
+                return this.marks2;
+            }
+    
+            getMarks3(){
+                return this.marks3;
+            }
+        }
+    
+        document.getElementById("rollno").value = Student.roll;
+    
+        let objs_array = []
+    
+        function submit(){
+            marks1 = document.getElementById("marks1").value;
+            marks2 = document.getElementById("marks2").value;
+            marks3 = document.getElementById("marks3").value;
+            name = document.getElementById("name").value;
+    
+            let ob = new Student(name, marks1, marks2, marks3)
+            objs_array.push(ob);
+    
+            document.getElementById("rollno").value = Student.roll;
+            document.getElementsByName("form1")[0].reset();
+        }
+    
+        function showAll(){
+            for(let ob of objs_array){
+                console.log("Roll No:" + ob.roll);
+                console.log("Name:" + ob.name);
+                console.log("Marks 1:" + ob.marks1);
+                console.log("Marks 2:" + ob.marks2);
+                console.log("Marks 3:" + ob.marks3);
+            }
+        }
+    
+        function showForRoll(){
+            roll = document.getElementById("rollno").value;
+            ob = objs_array[roll - 1];
+            console.log("====================");
+            console.log("Roll No:" + ob.roll);
+            console.log("Name:" + ob.name);
+            console.log("Marks 1:" + ob.marks1);
+            console.log("Marks 2:" + ob.marks2);
+            console.log("Marks 3:" + ob.marks3);
+        }
+    </script>
+    </html>

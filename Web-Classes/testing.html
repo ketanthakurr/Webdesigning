@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    </style>
+</head>
+<body>
+    <form action="javascript:submit()" name="form1">
+        <label for="rollno">Roll no:</label>
+        <input type="text" id="rollno" name="rollno"><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="marks1">Marks in sub1:</label>
+        <input type="text" id="marks1" name="marks1"><br><br>
+        <label for="marks2">Marks in sub2:</label>
+        <input type="text" id="marks2" name="marks2"><br><br>
+        <label for="marks3">Marks in sub3:</label>
+        <input type="text" id="marks3" name="marks3"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <button onclick="showAll()"> Show Results of all Students </button>
+    <button onclick="showForRoll()"> Display result of given roll no </button>
+</body>
+
+<script>
+    class Student{
+        static roll = 1;
+        
+        constructor(name, mark1, mark2, mark3){
+            this.roll = Student.roll++;
+
+            this.name = name;
+            this.marks1 = mark1;
+            this.marks2 = mark2;
+            this.marks3 = mark3;
+        }
+
+        getName(){
+            return this.name;
+        }
+
+        getRollNo(){
+            return this.roll;
+        }
+
+        getMarks1(){
+            return this.marks1;
+        }
+
+        getMarks2(){
+            return this.marks2;
+        }
+
+        getMarks3(){
+            return this.marks3;
+        }
+    }
+
+    document.getElementById("rollno").value = Student.roll;
+
+    let objs_array = []
+
+    function submit(){
+        marks1 = document.getElementById("marks1").value;
+        marks2 = document.getElementById("marks2").value;
+        marks3 = document.getElementById("marks3").value;
+        name = document.getElementById("name").value;
+
+        let ob = new Student(name, marks1, marks2, marks3)
+        objs_array.push(ob);
+
+        document.getElementById("rollno").value = Student.roll;
+        document.getElementsByName("form1")[0].reset();
+    }
+
+    function showAll(){
+        for(let ob of objs_array){
+            console.log("Roll No:" + ob.roll);
+            console.log("Name:" + ob.name);
+            console.log("Marks 1:" + ob.marks1);
+            console.log("Marks 2:" + ob.marks2);
+            console.log("Marks 3:" + ob.marks3);
+        }
+    }
+
+    function showForRoll(){
+        roll = document.getElementById("rollno").value;
+        ob = objs_array[roll - 1];
+        console.log("====================");
+        console.log("Roll No:" + ob.roll);
+        console.log("Name:" + ob.name);
+        console.log("Marks 1:" + ob.marks1);
+        console.log("Marks 2:" + ob.marks2);
+        console.log("Marks 3:" + ob.marks3);
+    }
+</script>
+</html>
