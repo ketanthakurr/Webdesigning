@@ -7,21 +7,34 @@
     <title>Document</title>
 
     <style>
+
+        .roll-box{
+            margin-left: 44px;
+        }
+
+        .name-box{
+            margin-left: 53px;
+        }
+
+        .enroll-btn{
+            margin-left: 50px;
+        }
+
     </style>
 </head>
 <body>
     <form action="javascript:submit()" name="form1">
-        <label for="rollno">Roll no:</label>
-        <input type="text" id="rollno" name="rollno"><br><br>
+        <label for="rollno">Roll no:</label> 
+        <input type="text" id="rollno" class="roll-box" name="rollno"><input type="submit" class="enroll-btn" value="Enroll Student"><br><br>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" class="name-box" name="name"><br><br>
         <label for="marks1">Marks in sub1:</label>
         <input type="text" id="marks1" name="marks1"><br><br>
         <label for="marks2">Marks in sub2:</label>
         <input type="text" id="marks2" name="marks2"><br><br>
         <label for="marks3">Marks in sub3:</label>
         <input type="text" id="marks3" name="marks3"><br><br>
-        <input type="submit" value="Submit">
+        
     </form>
 
     <button onclick="showAll()"> Show Results of all Students </button>
@@ -75,8 +88,10 @@
         let ob = new Student(name, marks1, marks2, marks3)
         objs_array.push(ob);
 
-        document.getElementById("rollno").value = Student.roll;
+
         document.getElementsByName("form1")[0].reset();
+        document.getElementById("rollno").value = Student.roll;
+        
     }
 
     function showAll(){
