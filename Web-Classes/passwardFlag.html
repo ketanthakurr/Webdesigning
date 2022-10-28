@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PasswardFlag</title>
+</head>
+<body>
+    
+    <form action="">
+        <label for="input-pass">Passward</label>
+        <input type="text" id="input-pass">
+    </form>
+
+    <script>
+        //           must
+        //            ↓
+        let regex = /^m.{4}\d{2}&/
+        let str = "m/ubu=s"
+        //let str = document.getElementById("input-pass")
+        let res = regex.exec(str)
+        if (res){
+            console.log("Valid Passward")
+        }
+        else{
+            console.log("Invalid Passward")
+        }
+        //let res = str.match(regex)
+        //console.log(res)
+    </script>
+
+</body>
+</html>

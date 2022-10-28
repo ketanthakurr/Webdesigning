@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Class and Object</title>
+</head>
+<body>
+    <ul id="ulist_ref"></ul>
+
+    <script>
+        class UpdateULIST
+        {
+            constructor(ulist_ref)
+            {
+                this.ulistref = ulistref
+            }
+
+            addNewItem(newItem)
+            {
+                let li = document.createElement("li")
+                li.textContent = newItem
+                this.ulistref.appendChild(li)
+            }
+
+            removeFirstItem()
+            {
+                // this.ulistref.removeChild(this.ulistref.removeFirstItem)
+
+                // this will not remove the item from screen but will remove the item from array.
+                alert(this.ListItemArray.splice(0,1))
+                // No. of element to be removed
+                //          ↓
+                // Splice(0,2,"Hey","30")
+                //        ↑  |  ↑     ↑
+                //      Index   These value will be added to the array
+            }
+
+            removeLastItem()
+            {
+                this.ulistref.removeChild(this.ulistref.removeLastItem)
+                this.ListItemArray.splice((this.ListItemArray.length - 1),1)
+            }
+
+            removeItemAtIndex(index)
+            {
+               //this.ulistref.removeChild(this.ulistref.removeLastItem)
+                this.ListItemArray.splice(index,1)
+                removeList()
+                for(let element of this)
+            }
+
+            removeList()
+            {
+                while(this.ulistref.firsChild)
+                {
+                    this.ulistref.removeChild(this.ulistref.firstElementChild)
+                }
+            }
+        }
+
+        let ul = document.getElementById("ulist_ref")
+
+
+    </script>
+</body>
+</html>

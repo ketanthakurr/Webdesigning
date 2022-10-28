@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* let regex = /amit/
+        let str = "His name is amit and he is a friend of Amita"
+        let res = regex.exes(str)
+        console.log(res)
+        console.log(res.input)
+        console.log(res.index)
+        */
+
+        /*
+        let regex = /amit/
+        let str = "His name is Amit and he is a friend of Amita"
+        let res = regex.exes(str)
+        console.log(res)
+        console.log(res.input)
+        console.log(res.index)
+        */
+
+        /*
+        let regex = /amit/ig
+        let str = "His name is Amit and he is a friend of Amita"
+        let res = str.match(regex)
+        console.log("Match: " + res)
+        */
+
+        /*
+        let regex = /a?mit/
+        let str = "amit name is Amit and he is a friend of amita, a(mit"
+        let res = str.match(regex)
+        console.log(res)
+        */
+
+        // let regex
+        // ? -> 0 or more occurance
+
+        /*
+        let regex = /a\d?mit/
+        let str = "A55mit name is Amit and he is a friend of Amita, a(mit"
+        let res = str.match(regex)
+
+        //will search for a string starting with 'a', foollowed by
+        // any digit between 0 - 9 
+        // followed by 'mit' 
+        console.log(res)
+        */
+
+        /*
+        let regex = /^.{4}%/
+        // ^ for starting
+        // $ for ending
+        let str = "A167"
+        let res = str.match(regex)
+        console.log(res)
+        */
+
+        /*
+        let regex = /hello(?=students)/g // g used for globlly search through whole string
+
+        let str = "hellostudent hello hellostudents hello"
+        let res = str.match(regex)
+
+        // will search for a string starting with 'hello' and then
+        // followed by a space and then by followed 'students'
+        console.log(res)
+        */
+        
+
+        let regex = /hello(?|students)/g // g used for globlly search through whole string
+
+        let str = "hellostudent hello hellostudents hello"
+        let res = str.match(regex)
+
+        // will search for a string starting with 'hello' and then
+        // followed by a space and then must not be followed by 'students'
+        console.log(res)
+
+
+
+    </script>
+</body>
+</html>
