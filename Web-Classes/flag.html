@@ -74,7 +74,7 @@
         console.log(res)
         */
         
-
+        /*
         let regex = /hello(?|students)/g // g used for globlly search through whole string
 
         let str = "hellostudent hello hellostudents hello"
@@ -83,8 +83,13 @@
         // will search for a string starting with 'hello' and then
         // followed by a space and then must not be followed by 'students'
         console.log(res)
+    */
 
-
+        let regex = /a.mit/
+        // . -> exactly one character
+        let str = "amit name is Amit and he is a friend of Amita, a(mit"
+        let res = str.match(regex)
+        console.log(res)
 
     </script>
 </body>
